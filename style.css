@@ -2,5 +2,87 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    background-color: blue ;
+}
+/* etiquetas compartidas */
+.page-size{
+    height: 100vh;
+}
+/*FONDO LOGIN*/
+.fondo-login{
+    background-color: #34495e;
+}
+/* LOGIN */
+.login-size{
+    width: 20rem;
+    height: auto;
+    padding: 5%;
+}
+.transparency{
+    background-color: #191919;
+    border-radius: 5%;
+}
+.txt-style{
+    font-family: sans-serif;
+}
+.txt-style-title{
+    color: white;  
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 25px;
+}
+.box-style-input{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.box-style-input:focus{
+    width: 280px;
+    border-color:#28cc71 ;
+}
+.btn-style{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #28cc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.btn-style:hover{
+    background-color:#28cc71;
+}
+.visible-on{
+    display: flex;
+}
+.visible-off{
+    display: none;
+}
+.center{ 
+    align-items: center;
+    justify-content: center;
+}
+.column{
+    flex-direction: column;
+}
+.img-size{
+    width: 7.5rem;
+    margin: 2% 0%;
+}
+.error{
+    color: rgb(211, 78, 78);
+    font-size: 0.8rem;
 }
