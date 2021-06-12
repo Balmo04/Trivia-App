@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 *{
     margin: 0%;
     padding: 0%;
@@ -7,20 +8,34 @@
 .page-size{
     height: 100vh;
 }
+.visible-on{
+    display: flex;
+}
+.visible-off{
+    display: none;
+}
+.center{ 
+    align-items: center;
+    justify-content: center;
+}
+.column{
+    flex-direction: column;
+}
+/* LOGIN */
 /*FONDO LOGIN*/
 .fondo-login{
     background-color: #34495e;
 }
-/* LOGIN */
 .login-size{
     width: 20rem;
     height: auto;
     padding: 5%;
 }
-.transparency{
+.login-transparency{
     background-color: #191919;
     border-radius: 5%;
 }
+/*Estilo de las cajas*/
 .txt-style{
     font-family: sans-serif;
 }
@@ -48,7 +63,7 @@
     width: 280px;
     border-color:#28cc71 ;
 }
-.btn-style{
+.btn-style-login{
     border: 0;
     background: none;
     display: block;
@@ -62,21 +77,8 @@
     transition: 0.25s;
     cursor: pointer;
 }
-.btn-style:hover{
+.btn-style-login:hover{
     background-color:#28cc71;
-}
-.visible-on{
-    display: flex;
-}
-.visible-off{
-    display: none;
-}
-.center{ 
-    align-items: center;
-    justify-content: center;
-}
-.column{
-    flex-direction: column;
 }
 .img-size{
     width: 7.5rem;
@@ -85,4 +87,57 @@
 .error{
     color: rgb(211, 78, 78);
     font-size: 0.8rem;
+}
+/*HOME*/
+.bg-home{
+    /* background: linear-gradient(0deg, #091018, #0f0f7a, #1c71e0) */
+    background: linear-gradient(45deg, #0B193C 0%, #3125A2 56%, #431998 100%);
+}
+.template-home{
+    background-color: rgba(128, 128, 128, 0.192);
+    width: 65%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5%;
+    padding: 2.5% 0px;
+}
+.millonario-logo{
+    width: clamp(12em, 30%, 20vw);
+    margin-bottom: clamp(1em, 3em, 2.5%);
+}
+.btn-style-home{
+    background: none;
+    width: 60%;
+    display: inline-block;
+    margin: 12px auto;
+    text-align: center;
+    outline: none;
+    padding: 15px 40px;
+    background: linear-gradient(to right, #021b79, #0575e6, #021b79);
+    color: #ffffffa3;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5em;
+    clip-path: polygon(15% 0, 85% 0, 90% 50%, 85% 100%, 15% 100%, 10% 50%);
+    transition: 0.25s;
+    cursor: pointer;
+}
+.btn-style-home:hover{
+    background: linear-gradient(to right, #010e05, #28cc71, #011402);
+}
+.btn-style-log-out:hover{
+    background: linear-gradient(to right, #010e05, #cc3b28, #011402);
+}
+.home-img-size{
+    width: 2rem;
+    margin-right: 2%;
+}
+
+
+#explain-game{
+    background-color: rgb(199, 45, 71);
+}
+#game{
+    background-color: rgb(64, 216, 27);
 }

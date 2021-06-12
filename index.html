@@ -8,29 +8,37 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <section id="login" class="visible-on page-size center fondo-login">
-        <main class="login-size visible-on center transparency">
-            <div class="visible-on center column">
-                <img src="img/usuario.svg" alt="usurio" class="img-size"/>
-                <h1 class="txt-style txt-style-title">Login</h1>
-                <input type="text" placeholder="Username" id="username" class="txt-style box-style-input">
-                <p id="messageLogin" class="visible-off txt-style error">Please enter your name here</p>
-                <button id="btn-login" class="txt-style btn-style">Login</button>
+    <main>
+        <section id="login" class="visible-on page-size center fondo-login">
+            <div class="login-size visible-on center login-transparency">
+                <div class="visible-on center column">
+                    <img src="img/usuario.svg" alt="usurio" class="img-size"/>
+                    <h1 class="txt-style txt-style-title">Login</h1>
+                    <input type="text" placeholder="Username" id="username" class="txt-style box-style-input">
+                    <p id="messageLogin" class="visible-off txt-style error">Please enter your name here</p>
+                    <button id="btn-login" class="txt-style btn-style-login">Login</button>
+                </div>
             </div>
-        </main>
+        </section>
+        <section id="home" class="visible-off page-size bg-home center">
+            <div class="template-home">
+                <img src="img/logo.png" alt="Who wants to be millonarie?" class="millonario-logo">
+                <button id="btn-start-game" class="btn-style-home">New Game</button>
+                <button id="btn-explain-game" class="btn-style-home">How to play?</button>
+                <button id="btn-log-out" class="btn-style-home btn-style-log-out">Log Out</button>     
+            </div>
+        </section>
+        <section id="explain-game" class="visible-off page-size">
 
-    </section>
-    <section id="home">
+        </section>
+        <section id="game" class="visible-off page-size">
+            
+        </section>
+        <section id="game-over" class="visible-off page-size">
 
-    </section>
-    <section id="game">
-
-    </section>
-    <section id="game-over">
-
-    </section>
-    
-    <script src="script.js">
-    </script>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
+<!-- <div class="triangulo"></div> -->
