@@ -6,7 +6,8 @@
 }
 /* etiquetas compartidas */
 .page-size{
-    height: 100vh;
+    height: clamp(100vh, 100vh,100vmax);
+    padding: 1rem;
 }
 .visible-on{
     display: flex;
@@ -95,30 +96,29 @@
 }
 .template-home{
     background-color: rgba(128, 128, 128, 0.192);
-    width: 65%;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 5%;
-    padding: 2.5% 0px;
+    padding: 3% 2.5em;
 }
 .millonario-logo{
-    width: clamp(12em, 30%, 20vw);
+    height: 15em;
     margin-bottom: clamp(1em, 3em, 2.5%);
 }
 .btn-style-home{
     background: none;
-    width: 60%;
+    width: 30rem;
     display: inline-block;
-    margin: 12px auto;
+    margin: 0.4em auto;
     text-align: center;
     outline: none;
-    padding: 15px 40px;
+    padding: 0.8rem 1em;
     background: linear-gradient(to right, #021b79, #0575e6, #021b79);
     color: #ffffffa3;
     font-family: 'Rubik', sans-serif;
-    font-size: 1.5em;
+    font-size: clamp(1em, 1.5em, 2em);
     clip-path: polygon(15% 0, 85% 0, 90% 50%, 85% 100%, 15% 100%, 10% 50%);
     transition: 0.25s;
     cursor: pointer;
@@ -129,15 +129,4 @@
 .btn-style-log-out:hover{
     background: linear-gradient(to right, #010e05, #cc3b28, #011402);
 }
-.home-img-size{
-    width: 2rem;
-    margin-right: 2%;
-}
 
-
-#explain-game{
-    background-color: rgb(199, 45, 71);
-}
-#game{
-    background-color: rgb(64, 216, 27);
-}
