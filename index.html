@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia App</title>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="shortcut icon" href="img/favicon.svg">
 </head>
 <body>
     <main>
@@ -21,24 +22,40 @@
             </div>
         </section>
         <section id="home" class="visible-off page-size bg-home center">
-            <div class="template-home">
-                <img src="img/logo.png" alt="Who wants to be millonarie?" class="millonario-logo">
-                <button id="btn-start-game" class="btn-style-home">New Game</button>
-                <button id="btn-explain-game" class="btn-style-home">How to play?</button>
-                <button id="btn-log-out" class="btn-style-home btn-style-log-out">Log Out</button>     
+            <div>
+                <div class="template-home center">
+                    <img src="img/logo.png" alt="Who wants to be millonarie?" class="millonario-logo">
+                    <hi id="home-message"></hi>
+                    <button class="all-btn-home btn-style-home">New Game</button>   
+                    <button class="all-btn-home btn-style-home">How to play?</button>   
+                    <button class="all-btn-home btn-style-home btn-style-log-out">Log Out</button>     
+                </div>
             </div>
         </section>
-        <section id="explain-game" class="visible-off page-size">
-
+        <section id="dificulty-game" class="visible-off page-size bg-home center">
+            <div class="template-home">
+                <button class="btn-close-tab">
+                    <img src="img/close-tab.svg" alt="Close Tab" class="login-size">
+                </button>
+                <button id="easy">Baby mode</button>
+                <button id="hard">TryHard Mode</button>
+            </div>
         </section>
-        <section id="game" class="visible-off page-size">
-            
+        <section id="explain-game" class="visible-off page-size bg-home center">
+            <div class="template-home">
+                <button class="btn-close-tab"><img src="img/close-tab.svg" alt="Close Tab" class="login-size"></button>
+                <h3>Who wants to be millonarie?</h3>
+                <article>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, atque velit iusto cupiditate reprehenderit facere quos, optio, aliquam temporibus esse repellat! Consectetur non doloribus quae dolor repellendus. Illo, eligendi velit.
+                </article>     
+            </div>
+        </section> 
+        <section id="game" class="visible-off page-size">   
         </section>
-        <section id="game-over" class="visible-off page-size">
-
+        <section id="game-over" class="visible-off page-size">    
         </section>
     </main>
+    <script src="questions.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-<!-- <div class="triangulo"></div> -->
