@@ -94,6 +94,21 @@
     /* background: linear-gradient(0deg, #091018, #0f0f7a, #1c71e0) */
     background: linear-gradient(45deg, #0B193C 0%, #3125A2 56%, #431998 100%);
 }
+.txt-white{
+    width: 75%;
+    font-family: sans-serif;
+    color: #ffffffc2;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.txt-yellow{
+    font-family: 'Rubik', sans-serif;
+    color: #f1f11ad8;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    text-align: center;
+}
 .template-home{
     background-color: rgba(128, 128, 128, 0.192);
     height: 100%;
@@ -130,3 +145,48 @@
     background: linear-gradient(to right, #010e05, #cc3b28, #011402);
 }
 
+/*Select difficulty*/
+.template-difficulty{
+    background-color: rgba(128, 128, 128, 0.192);
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    border-radius: 20px;
+}
+.top-right{
+    align-self: flex-end;
+    background: none;
+    outline: none;
+    border: none;
+}
+.btn-close{
+    width: clamp(0.8rem, 2rem, 3.5rem);
+    height: clamp(0.8rem, 2rem, 3.5rem);;
+    margin: 7px;
+}
+.btn-close:hover{
+    background: rgb(238, 68, 68);
+}
+.separate{
+    display: flex;
+    flex-direction: column;
+}
+.btn-style-difficulty{
+    width: clamp(25vw, 40vw, 55vw);
+    height: clamp(8vh, 8vh, 14vh);
+    padding: 0rem auto;
+    border-radius: 5%;
+    margin: clamp(0.3rem, 0.5rem, 0.8rem );
+    font-family: 'Rubik', sans-serif;
+    font-size: clamp(0.8rem, 1.5rem, 2.5rem);
+    font-weight: 700;
+    color: rgb(235, 223, 223);
+    clip-path: polygon(15% 0, 85% 0, 90% 50%, 85% 100%, 15% 100%, 10% 50%);
+    background: linear-gradient(to left, #021b79, #0575e6, #021b79);
+}
+.btn-style-difficulty:hover{
+    background: linear-gradient(to right, #010e05, #28cc71, #011402);
+}
+#game{
+    background: chartreuse;
+}

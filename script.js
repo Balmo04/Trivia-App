@@ -10,7 +10,8 @@ const allBtnHome = document.getElementsByClassName("all-btn-home");
 /* explain game */
 const explainGame = document.getElementById("explain-game");
 /*difficulty game */
-const difficulty = document.getElementById("dificulty-game")
+const difficulty = document.getElementById("dificulty-game");
+const allBtnDifficult=document.getElementsByClassName("btn-difficult")
 /*share button */
 const btnCloseTab = document.getElementsByClassName("btn-close-tab");
 /* game */
@@ -39,7 +40,7 @@ function emptyImput(name, positionScreen){
     }
 }
 function imprintMessage(name){
-    messageHome.innerText='Hey '+name+", do you think you can win?";
+    messageHome.innerHTML='Hey <span class="txt-yellow">'+name+"</span><br> Do you think that you can win?";
 }
 
 for (let i=0; i<allBtnHome.length; i++)
@@ -80,23 +81,35 @@ function nextPage (screenList, positionScreen, specialCase, specialPosition){
     }
 }
 
-function backPage (screenList, positionScreen, specialCase){
+function backPage (screenList, positionScreen, specialCase, specialPosition){
     if(specialCase){
         screenList[positionScreen].classList.replace("visible-on", "visible-off"); 
-        screenList[1].classList.replace("visible-off","visible-on"); 
+        screenList[specialPosition].classList.replace("visible-off","visible-on"); 
     }else{
         screenList[positionScreen].classList.replace("visible-on", "visible-off");
         screenList[positionScreen-1].classList.replace("visible-off","visible-on");
     }   
 }
 
-btnCloseTab[0].addEventListener("click", function(){
-    positionScreen=4;
-    isOpen=true;
-    backPage(screenList, positionScreen, isOpen)
-});
-btnCloseTab[1].addEventListener("click", function(){
-    positionScreen=5;
-    isOpen=true;
-    backPage(screenList, positionScreen, isOpen)
-});
+for(let i=0; i<btnCloseTab.length; i++){
+    btnCloseTab[i].addEventListener("click", function(){
+        if(i%2){
+            positionScreen=5; 
+        }
+        else{      
+            positionScreen=4; 
+        }
+        specialPosition=1;
+        specialCase=true;
+        nextPage(screenList, positionScreen, specialCase, specialPosition);
+    });
+}
+
+for(let i=0; i<allBtnDifficult.length; i++){
+    allBtnDifficult[i].addEventListener("click", function(){
+        positionScreen=4;
+        specialCase=true;
+        specialPosition=2;
+        nextPage(screenList, positionScreen, specialCase, specialPosition);
+    });
+}
