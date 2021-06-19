@@ -16,6 +16,10 @@ const allBtnDifficult=document.getElementsByClassName("btn-difficult")
 const btnCloseTab = document.getElementsByClassName("btn-close-tab");
 /* game */
 const game = document.getElementById("game");
+const showQuestion = document.getElementById("question");
+const numQuestion = document.getElementById("num-question");
+const btnGame = document.getElementsByClassName("btn-game");
+const txtAnswer = document.getElementsByClassName("txt-answer");
 /* game-over */
 const gameOver = document.getElementById("game-over");
 
@@ -24,6 +28,8 @@ let positionScreen=0;
 let isLogin=false;
 let specialCase=false;
 let specialPosition=0;
+let positionQuestion=0;
+let mode;
 
 loginEnter.addEventListener("click", function(){
     positionScreen=0;
@@ -39,6 +45,7 @@ function emptyImput(name, positionScreen){
         messageLogin.classList.replace("visible-off","visible-on");
     }
 }
+
 function imprintMessage(name){
     messageHome.innerHTML='Hey <span class="txt-yellow">'+name+"</span><br> Do you think that you can win?";
 }
@@ -50,7 +57,7 @@ for (let i=0; i<allBtnHome.length; i++)
         selectCase(i, positionScreen);
     });
 }
- 
+
 function selectCase(i, positionScreen){
     switch (i){
         case 0:
@@ -111,5 +118,43 @@ for(let i=0; i<allBtnDifficult.length; i++){
         specialCase=true;
         specialPosition=2;
         nextPage(screenList, positionScreen, specialCase, specialPosition);
+        if(i){
+            console.log("Seleccione Tryhard");
+            positionQuestion=0;  
+            mode = hardMode;  
+        }
+        else{
+            console.log("seleccione babymode");
+            positionQuestion=0; 
+            mode = easyMode;
+        }     
+        nextQuestion();
     });
+}
+
+function nextQuestion(){
+    if(mode.questions[positionQuestion]){
+        numQuestion.innerText=(positionQuestion+1)+".";
+        showQuestion.innerHTML=mode.questions[positionQuestion];
+        for(let i=0; i<txtAnswer.length; i++){
+            txtAnswer[i].innerText=mode.answers[positionQuestion][i]; 
+        } 
+    }
+    else{
+        positionScreen = 2;
+        specialCase = false;
+        nextPage(screenList, positionScreen, specialCase, specialPosition);
+    }
+}
+
+for(let i=0; i<btnGame.length; i++){ 
+    btnGame[i].addEventListener("click", function(){
+        positionQuestion += 1;
+        validateQuestion()
+        nextQuestion()
+    });
+} 
+
+function validateQuestion(){
+
 }
