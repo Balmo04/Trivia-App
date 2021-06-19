@@ -7,6 +7,7 @@
 /* etiquetas compartidas */
 .page-size{
     height: clamp(100vh, 100vh,100vmax);
+    width: clamp(100vw, 100vw,100vmax);
     padding: 1rem;
 }
 .visible-on{
@@ -106,8 +107,9 @@
     font-family: 'Rubik', sans-serif;
     color: #f1f11ad8;
     font-size: 1.4rem;
-    font-weight: bolder;
     text-align: center;
+    font-weight: bolder;
+    margin-right: 1%;
 }
 .template-home{
     background-color: rgba(128, 128, 128, 0.192);
@@ -187,6 +189,53 @@
 .btn-style-difficulty:hover{
     background: linear-gradient(to right, #010e05, #28cc71, #011402);
 }
-#game{
-    background: chartreuse;
+
+/*Template game*/
+.txt-question{
+    font-family: sans-serif;
+    color: #ffffffe3;
+    font-weight: 500;
+    font-size: clamp(1.4rem, 1.8em, 2.2rem);
+    text-align: center;
+}
+.game-transparency{
+    background-color: rgba(128, 128, 128, 0.192);
+    width: clamp(80vw, 90vw, 98vw);
+    height: clamp(70vh, 75vh, 85vw) ;
+    padding: 2%;
+    border-radius: 3%;
+}
+.game-template{
+    display: grid;
+    grid-template-columns: [x0] 1fr [x1] 1fr [x2];
+    grid-template-rows: [top-line] auto [medium-line] auto [bottom-line] auto; 
+    row-gap: clamp(0.2rem, 0.4rem, 0.5rem);
+    column-gap: 1em;
+}
+.game-content{
+    grid-column: x0/x2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+    background: linear-gradient(to left, #021b79, #0e6ac5, #021b79);
+}
+.btn-flex{
+    display: flex;
+    justify-content: center;
+}
+.btn-game-style{
+    clip-path: polygon(20% 0, 80% 0, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+    background: linear-gradient(to left, #021b79, #0e6ac5, #021b79);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.btn-game-style:hover{
+    background: linear-gradient(to left, #021b79, #0481ff, #021b79);
+}
+
+#game-over{
+    background-color: aquamarine;
 }
