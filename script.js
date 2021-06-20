@@ -30,6 +30,7 @@ let specialCase=false;
 let specialPosition=0;
 let positionQuestion=0;
 let mode;
+let positionCorrectAnswer=[];
 
 loginEnter.addEventListener("click", function(){
     positionScreen=0;
@@ -119,12 +120,10 @@ for(let i=0; i<allBtnDifficult.length; i++){
         specialPosition=2;
         nextPage(screenList, positionScreen, specialCase, specialPosition);
         if(i){
-            console.log("Seleccione Tryhard");
             positionQuestion=0;  
             mode = hardMode;  
         }
         else{
-            console.log("seleccione babymode");
             positionQuestion=0; 
             mode = easyMode;
         }     
@@ -132,29 +131,51 @@ for(let i=0; i<allBtnDifficult.length; i++){
     });
 }
 
-function nextQuestion(){
+function nextQuestion(){  
     if(mode.questions[positionQuestion]){
         numQuestion.innerText=(positionQuestion+1)+".";
-        showQuestion.innerHTML=mode.questions[positionQuestion];
+        showQuestion.innerText=mode.questions[positionQuestion];
         for(let i=0; i<txtAnswer.length; i++){
-            txtAnswer[i].innerText=mode.answers[positionQuestion][i]; 
+            txtAnswer[i].innerText=mode.answers[positionQuestion][i];
+            if(txtAnswer[i].textContent===mode.correctAnswers[positionQuestion]){
+                positionCorrectAnswer[positionQuestion]=i; 
+                console.log(positionCorrectAnswer); 
+            }
         } 
     }
     else{
         positionScreen = 2;
         specialCase = false;
-        nextPage(screenList, positionScreen, specialCase, specialPosition);
+        nextPage(screenList, positionScreen, specialCase);
     }
 }
+console.log(positionCorrectAnswer); 
 
 for(let i=0; i<btnGame.length; i++){ 
-    btnGame[i].addEventListener("click", function(){
+    btnGame[i].addEventListener("click", function(){  
+        validateQuestion(positionQuestion, i);
         positionQuestion += 1;
-        validateQuestion()
-        nextQuestion()
+        setTimeout(()=>{         
+            nextQuestion();
+            quitEffects(i);  
+        }, 750)
     });
 } 
 
-function validateQuestion(){
+function validateQuestion(positionQuestion, i){
+    if(txtAnswer[i].textContent===mode.correctAnswers[positionQuestion]){
+        console.log("correcto");
+        btnGame[i].classList.replace("bg-button-game","bg-correct");
+    }
+    else{
+        console.log("incorrecto");
+        
+        btnGame[i].classList.replace("bg-button-game","bg-incorrect");
 
+    }   
 }
+function quitEffects(i){
+        btnGame[i].classList.replace("bg-correct", "bg-button-game");
+        btnGame[i].classList.replace("bg-incorrect", "bg-button-game");
+}
+

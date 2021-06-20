@@ -2,7 +2,7 @@ const createQuestion = (questionList, answerList, goodAnswerList) =>{
     const structure ={
         questions: questionList,
         answers: answerList,    
-        correctAnswer: goodAnswerList,
+        correctAnswers: goodAnswerList,
     }
     return structure;
 }
@@ -34,15 +34,19 @@ const arrrayGoodAnswerE=[
 ];
 const arrayAnswerE=[
     ["1914","1916", "1920", "1917"],
-    ["3.1416","3.1415", "3.1817", "3.1516"],
-    ["8","6", "12", "10"],
-    ["China","Japón","EE.UU","España"],
-    ["Rodio","Oro","Plata","Cobre"],
+    ["3.1817","3.1415","3.1416","3.1516"],
+    ["6","8", "12", "10"],
+    ["Japón","EE.UU","España","China"],
+    ["Oro","Rodio","Plata","Cobre"],
     ["1939","1932","1949","1930"],
-    ["Equilatero","Cuadrilátero","Isosceles","Escaleno"],
-    ["3","1","2","4"],
-    ["Brazil","Colombia","Argentina","Chile"],
-    [ "Francia","Ecuador","Perú","España"],
+    ["Cuadrilátero","Equilatero","Isosceles","Escaleno"],
+    ["1","2","4","3"],
+    ["Colombia","Argentina","Chile","Brazil"],
+    ["Francia","Ecuador","Perú","España"],
+    /*
+
+    
+    */
 ];
 
 /*Modo dificil*/
@@ -83,9 +87,5 @@ const arrayAnswerH=[
     ["Saturno","Marte","Júpiter","Urano"],
 ];
 
-
 const easyMode= createQuestion(arrayQuestionE, arrayAnswerE, arrrayGoodAnswerE);
 const hardMode= createQuestion(arrayQuestionH, arrayAnswerH, arrrayGoodAnswerH);
-
-console.log(easyMode);
-console.log(hardMode);

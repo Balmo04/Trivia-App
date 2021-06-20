@@ -225,16 +225,25 @@
     justify-content: center;
 }
 .btn-game-style{
-    clip-path: polygon(20% 0, 80% 0, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
-    background: linear-gradient(to left, #021b79, #0e6ac5, #021b79);
+    clip-path: polygon(20% 0, 80% 0, 100% 50%, 80% 100%, 20% 100%, 0% 50%);  
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
-.btn-game-style:hover{
+.bg-button-game{
+    background: linear-gradient(to left, #021b79, #0e6ac5, #021b79);
+}
+.bg-button-game:hover{
     background: linear-gradient(to left, #021b79, #0481ff, #021b79);
 }
+.bg-correct{
+    background: linear-gradient(to right, #010e05, #28cc71, #011402);
+}
+.bg-incorrect{
+    background: linear-gradient(to right, #010e05, #cc3b28, #011402);
+}
+
 
 #game-over{
     background-color: aquamarine;
