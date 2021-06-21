@@ -5,7 +5,7 @@ const messageLogin = document.getElementById("messageLogin");
 const loginEnter = document.getElementById("btn-login");
 /* home */
 const home = document.getElementById("home");
-const messageHome = document.getElementById("home-message")
+const messageHome = document.getElementById("home-message");
 const allBtnHome = document.getElementsByClassName("all-btn-home");
 /* explain game */
 const explainGame = document.getElementById("explain-game");
@@ -22,15 +22,21 @@ const btnGame = document.getElementsByClassName("btn-game");
 const txtAnswer = document.getElementsByClassName("txt-answer");
 /* game-over */
 const gameOver = document.getElementById("game-over");
+const userGameOver = document.getElementById("user-game-over");
+const messageGameOver = document.getElementById("message-game-over");
+const imgGameOver = document.getElementById("img-game-over");
+const btnGameOver = document.getElementsByClassName("btn-game-over");
 
 const screenList=[login, home, game, gameOver, difficulty, explainGame];
+
 let positionScreen=0;
 let isLogin=false;
 let specialCase=false;
 let specialPosition=0;
 let positionQuestion=0;
 let mode;
-let positionCorrectAnswer=[];
+let positionCorrectAnswer=0;
+let correctPoints=0;
 
 loginEnter.addEventListener("click", function(){
     positionScreen=0;
@@ -49,6 +55,7 @@ function emptyImput(name, positionScreen){
 
 function imprintMessage(name){
     messageHome.innerHTML='Hey <span class="txt-yellow">'+name+"</span><br> Do you think that you can win?";
+    userGameOver.innerText=name;
 }
 
 for (let i=0; i<allBtnHome.length; i++)
@@ -73,6 +80,7 @@ function selectCase(i, positionScreen){
             break;
         case 2:
             specialCase=false;
+            messageLogin.classList.replace("visible-on","visible-off");
             backPage(screenList, positionScreen, specialCase);
             break;
     }
@@ -138,8 +146,7 @@ function nextQuestion(){
         for(let i=0; i<txtAnswer.length; i++){
             txtAnswer[i].innerText=mode.answers[positionQuestion][i];
             if(txtAnswer[i].textContent===mode.correctAnswers[positionQuestion]){
-                positionCorrectAnswer[positionQuestion]=i; 
-                console.log(positionCorrectAnswer); 
+                positionCorrectAnswer=i; 
             }
         } 
     }
@@ -149,33 +156,59 @@ function nextQuestion(){
         nextPage(screenList, positionScreen, specialCase);
     }
 }
-console.log(positionCorrectAnswer); 
 
 for(let i=0; i<btnGame.length; i++){ 
     btnGame[i].addEventListener("click", function(){  
         validateQuestion(positionQuestion, i);
         positionQuestion += 1;
-        setTimeout(()=>{         
+        setTimeout(()=>{ 
+            quitEffects(i);         
             nextQuestion();
-            quitEffects(i);  
-        }, 750)
+        }, 1500)
     });
 } 
 
 function validateQuestion(positionQuestion, i){
     if(txtAnswer[i].textContent===mode.correctAnswers[positionQuestion]){
-        console.log("correcto");
         btnGame[i].classList.replace("bg-button-game","bg-correct");
+        correctPoints+=1;
     }
     else{
-        console.log("incorrecto");
-        
         btnGame[i].classList.replace("bg-button-game","bg-incorrect");
-
+        btnGame[positionCorrectAnswer].classList.replace("bg-button-game","bg-correct");
     }   
+    controlPoints(correctPoints);
 }
+
 function quitEffects(i){
         btnGame[i].classList.replace("bg-correct", "bg-button-game");
         btnGame[i].classList.replace("bg-incorrect", "bg-button-game");
+        btnGame[positionCorrectAnswer].classList.replace("bg-correct", "bg-button-game");
+}
+
+function controlPoints(correctPoints){
+    if(correctPoints>6){
+        imgGameOver.src="img/ganar.svg";
+        messageGameOver.innerText="Felicidades has ganado";
+    }
+    else{
+        imgGameOver.src="img/lose.svg";
+        messageGameOver.innerText="Más suerte para la próxima";
+    }
+}
+
+for (let index = 0; index < btnGameOver.length; index++) {
+    btnGameOver[index].addEventListener("click",function(){
+        positionScreen=3;
+        specialCase=true;
+        correctPoints=0;
+        if(index){
+            specialPosition=4;
+        }
+        else{
+            specialPosition=1;
+        }
+        nextPage (screenList, positionScreen, specialCase, specialPosition);
+    });
 }
 
