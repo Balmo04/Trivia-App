@@ -6,8 +6,8 @@
 }
 /* etiquetas compartidas */
 .page-size{
-    height: clamp(100vh, 100vh,100vmax);
-    width: clamp(100vw, 100vw,100vmax);
+    width: auto;
+    height: clamp(100vh, 47.5vmax, 47.5vmax);
     padding: 1rem;
 }
 .visible-on{
@@ -29,9 +29,9 @@
     background-color: #34495e;
 }
 .login-size{
-    width: 20rem;
+    width: clamp(10rem, 18rem, 20rem );
     height: auto;
-    padding: 5%;
+    padding: 3%;
 }
 .login-transparency{
     background-color: #191919;
@@ -45,16 +45,16 @@
     color: white;  
     text-transform: uppercase;
     font-weight: 500;
-    margin-top: 25px;
+    margin-top: 3.5%;
 }
 .box-style-input{
     border: 0;
     background: none;
     display: block;
-    margin: 20px auto;
+    margin: 8% auto;
     text-align: center;
     border: 2px solid #3498db;
-    padding: 14px 10px;
+    padding: 12px 10px;
     width: 200px;
     outline: none;
     color: white;
@@ -69,10 +69,10 @@
     border: 0;
     background: none;
     display: block;
-    margin: 20px auto;
+    margin: 8% auto 5%;
     text-align: center;
     border: 2px solid #28cc71;
-    padding: 14px 40px;
+    padding: 5% 40px;
     outline: none;
     color: white;
     border-radius: 24px;
@@ -96,7 +96,7 @@
     background: linear-gradient(45deg, #0B193C 0%, #3125A2 56%, #431998 100%);
 }
 .txt-white{
-    width: 75%;
+    width: 99%;
     font-family: sans-serif;
     color: #ffffffc2;
     font-size: 1.3rem;
@@ -113,12 +113,13 @@
 }
 .template-home{
     background-color: rgba(128, 128, 128, 0.192);
-    height: 100%;
+    height: auto;
+    width: 22rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 5%;
-    padding: 3% 2.5em;
+    padding: 6% 0%;
 }
 .millonario-logo{
     height: 15em;
@@ -126,12 +127,12 @@
 }
 .btn-style-home{
     background: none;
-    width: 30rem;
+    width: 100%;
     display: inline-block;
-    margin: 0.4em auto;
+    margin: 0.3em auto;
     text-align: center;
     outline: none;
-    padding: 0.8rem 1em;
+    padding: 1rem 4rem;
     background: linear-gradient(to right, #021b79, #0575e6, #021b79);
     color: #ffffffa3;
     font-family: 'Rubik', sans-serif;
@@ -173,24 +174,11 @@
     display: flex;
     flex-direction: column;
 }
-.btn-style-difficulty{
-    width: clamp(25vw, 40vw, 55vw);
-    height: clamp(8vh, 8vh, 14vh);
-    padding: 0rem auto;
-    border-radius: 5%;
-    margin: clamp(0.3rem, 0.5rem, 0.8rem );
-    font-family: 'Rubik', sans-serif;
-    font-size: clamp(0.8rem, 1.5rem, 2.5rem);
-    font-weight: 700;
-    color: rgb(235, 223, 223);
-    clip-path: polygon(15% 0, 85% 0, 90% 50%, 85% 100%, 15% 100%, 10% 50%);
-    background: linear-gradient(to left, #021b79, #0575e6, #021b79);
-}
-.btn-style-difficulty:hover{
-    background: linear-gradient(to right, #010e05, #28cc71, #011402);
-}
 
 /*Template game*/
+.column-game{
+    flex-direction: column;
+}
 .txt-question{
     font-family: sans-serif;
     color: #ffffffe3;
@@ -201,14 +189,14 @@
 .game-transparency{
     background-color: rgba(128, 128, 128, 0.192);
     width: clamp(80vw, 90vw, 98vw);
-    height: clamp(70vh, 75vh, 85vw) ;
+    height: 50vh;
     padding: 2%;
     border-radius: 3%;
 }
 .game-template{
     display: grid;
     grid-template-columns: [x0] 1fr [x1] 1fr [x2];
-    grid-template-rows: [top-line] auto [medium-line] auto [bottom-line] auto; 
+    grid-template-rows: [top-line] 33% [medium-line] 33% [bottom-line];
     row-gap: clamp(0.2rem, 0.4rem, 0.5rem);
     column-gap: 1em;
 }
@@ -230,6 +218,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    height: 100%;
 }
 .bg-button-game{
     background: linear-gradient(to left, #021b79, #0e6ac5, #021b79);
@@ -244,7 +233,59 @@
     background: linear-gradient(to right, #010e05, #cc3b28, #011402);
 }
 
+.game-over-transparency{
+    background-color: rgba(90, 90, 90, 0.233);
+    padding: 3%;
+    border-radius: 5%;
+}
+.base-line{
+    display:flex;
+    justify-content: baseline;
+}
 
-#game-over{
-    background-color: aquamarine;
+@media screen and (max-width: 700px){
+    .millonario-logo{
+        height: 10rem;
+    }
+    .game-template{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .btn-game-style{
+        padding: 5px 0px;
+        width: 100%;
+    }
+    .btn-flex{
+        align-items: baseline;
+        justify-content: left;
+        margin-left: 20%;
+    }
+    .game-content{
+        clip-path: polygon(20% 0, 80% 0, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+        height: 100%;
+        width: 100%;
+        padding: 10% 8%;
+    }
+    .txt-question{
+        font-size: 1.3rem;
+    }
+    .game-transparency{
+        height: auto;
+    }
+    .btn-style-home{
+        padding: 0.2rem 2rem;
+    }
+}
+@media screen and (max-height:400px){
+    .column-game{
+        flex-direction: row;
+    }
+    .btn-style-home{
+        width: 13rem;
+    }
+    .template-home{
+        width: auto;
+    }
 }

@@ -26,9 +26,11 @@
                 <div class="template-home center">
                     <img src="img/logo.png" alt="Who wants to be millonarie?" class="millonario-logo">
                     <hi id="home-message" class="txt-white"></hi>
-                    <button class="all-btn-home btn-style-home">Nuevo Juego</button>   
-                    <button class="all-btn-home btn-style-home">¿Cómo jugar?</button>   
-                    <button class="all-btn-home btn-style-home btn-style-log-out">Salir</button>     
+                    <div class="visible-on column-game">
+                        <button class="all-btn-home btn-style-home">Nuevo Juego</button>   
+                        <button class="all-btn-home btn-style-home">¿Cómo jugar?</button>   
+                        <button class="all-btn-home btn-style-home btn-style-log-out">Salir</button>   
+                    </div>  
                 </div>
             </div>
         </section>
@@ -39,8 +41,8 @@
                 </button>
                 <div class="separate">
                     <h3 class="txt-white">Selecciona el modo de juego</h3>
-                    <button class="btn-difficult btn-style-difficulty">Baby mode</button>
-                    <button class="btn-difficult btn-style-difficulty">TryHard Mode</button>
+                    <button class="btn-difficult btn-style-home">Baby mode</button>
+                    <button class="btn-difficult btn-style-home">TryHard Mode</button>
                 </div>
             </div>
         </section>
@@ -50,8 +52,8 @@
                     <img src="img/close-tab.svg" alt="Close Tab" class="btn-close">
                 </button>
                 <div>
-                    <h3>¿Quién quiere ser millonario?</h3>
-                    <article>
+                    <h3 class="txt-yellow">¿Quién quiere ser millonario?</h3>
+                    <article class="txt-white">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, atque velit iusto cupiditate reprehenderit facere quos, optio, aliquam temporibus esse repellat! Consectetur non doloribus quae dolor repellendus. Illo, eligendi velit.
                     </article>     
                 </div>
@@ -89,16 +91,18 @@
                     </button>
             </div>
         </section>
-        <section id="game-over" class="visible-off page-size bg-home center column">    
-            <hgroup>
-               <h2 id="user-game-over" class="txt-yellow"></h2c>
-               <h3 id="message-game-over" class="txt-yellow"></h3>
-            </hgroup>
-            <img id="img-game-over" src="" alt="GG" class="millonario-logo"> 
-            <div>
-                <button class="btn-game-over">Salir</button>
-                <button class="btn-game-over">Volver a Jugar</button>
-            </div>  
+        <section id="game-over" class="visible-off page-size bg-home center">    
+            <div class="visible-on center column game-over-transparency">
+                <hgroup>
+                   <h2 id="user-game-over" class="txt-yellow"></h2c>
+                   <h3 id="message-game-over" class="txt-white"></h3>
+                </hgroup>
+                <img id="img-game-over" src="" alt="GG" class="millonario-logo"> 
+                <div class="base-line">
+                    <button class="btn-game-over btn-style-home">Salir</button>
+                    <button class="btn-game-over btn-style-home">Volver a Jugar</button>
+                </div>  
+            </div>
         </section>
     </main>
     <script src="questions.js"></script>

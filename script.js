@@ -197,17 +197,20 @@ function controlPoints(correctPoints){
     }
 }
 
-for (let index = 0; index < btnGameOver.length; index++) {
-    btnGameOver[index].addEventListener("click",function(){
-        positionScreen=3;
-        specialCase=true;
+/*const screenList=[login, home, game, gameOver, difficulty, explainGame]; */
+for (let i = 0; i < btnGameOver.length; i++) {
+    btnGameOver[i].addEventListener("click",function(){
+        positionScreen=3;       
         correctPoints=0;
-        if(index){
-            specialPosition=4;
+        specialCase=true;
+        if(i){  
+            /*Boton 2 */
+            specialPosition = 4;      
         }
         else{
-            specialPosition=1;
-        }
+            /*Boton 1 */
+            specialPosition = 1;
+        }      
         nextPage (screenList, positionScreen, specialCase, specialPosition);
     });
 }

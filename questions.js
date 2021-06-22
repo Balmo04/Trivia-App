@@ -71,7 +71,7 @@ const arrrayGoodAnswerH=[
     "El Nilo",
     "Homero",
     "Braile",
-    "LA música",
+    "La música",
     "Júpiter",
 ];
 const arrayAnswerH=[
